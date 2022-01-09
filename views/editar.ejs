@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Curso</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <form action="/atualizar/<%= id %>" method="post">
+        <div class="form-group">
+            <label> Curso </label>
+            <input type="text" class="form-control" name="descricao" value="<%=descricao%>" placeholder="Nome">
+
+        </div>
+        <div class="form-group">
+            <label> Carga horária </label>
+            <input type="text" class="form-control" name="carga_horaria" placeholder="Digitar Email" value="<% carga_horaria%>">
+        </div>
+        <button type="submit" class="btn btn-info"> Atualizar </button>
+        </form>
+    </div>
+    
+</body>
+</html>

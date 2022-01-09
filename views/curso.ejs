@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css">
+  <title>Página de cursos de desenvolvimento</title>
+  <style>
+      table {
+        border-collapse: separate;
+        border-spacing: 8px;
+      }
+      body {
+        margin-left: 180px;
+        margin-top: 50px;
+        align-items: center;
+        position: absolute;
+      }
+       h1 {
+        text-align: justify;
+      }
+
+  </style>
+</head>
+
+<body>
+  <h1>====== Cursos ======</h1>
+  <table class="table">
+    <tr>
+      <th style="width: 200px;">Descrição</th>
+      <th>Carga horária</th>
+    </tr>
+    <% for(i=0; i < dados.length; i++){ %>
+    <tr>
+      <td> <%= dados[i].DESCRICAO %> </td>
+      <td>  <%= dados[i].CARGA_HORARIA %> </td>
+      <td>
+          <a class="btn btn-success edit" href="/editar/<%=dados[i].ID%>">Editar</a>
+          <a class="btn btn-danger delete" onclick="return confirm('Deseja Excluir?')" href="/curso/Deletar/<%=dados[i].ID%>">Delete</a>
+      </td>
+      <% } %>
+    </tr>
+  </table>
+
+  <form action="/cursos/salvar" method="post">
+      <input type="text" name="DESCRICAO">
+      <input type="hidden" name="CARGA_HORARIA" value="40" readonly="readonly">
+      <input type="submit" value="Adicionar" class="btn btn-primary" id="add">
+  </form>
+</body>
+
+</html>

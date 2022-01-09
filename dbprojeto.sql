@@ -1,0 +1,23 @@
+CREATE DATABASE ProjetoWeb;
+USE ProjetoWeb;
+
+CREATE TABLE Curso(
+
+ID INT auto_increment primary key,
+DESCRICAO varchar (50),
+CARGA_HORARIA int
+);
+
+SELECT * FROM users;
+INSERT INTO Curso VALUES (1, 'HTML', 40);
+INSERT INTO Curso (DESCRICAO, CARGA_HORARIA) VALUES ('CSS', 20);
+INSERT INTO Curso (DESCRICAO, CARGA_HORARIA) VALUES ('JS', 60);
+INSERT INTO Curso (DESCRICAO, CARGA_HORARIA) VALUES ('DB', 20);
+INSERT INTO Curso (DESCRICAO, CARGA_HORARIA) VALUES ('SQL', 60);
+
+
+select * from Curso;
+
+select ID from Curso;
+
+drop TABLE Curso;
